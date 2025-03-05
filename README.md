@@ -1,3 +1,7 @@
+RSLEET 
+
+[![Rust](https://github.com/deeper-x/rsleet/actions/workflows/rust.yml/badge.svg)](https://github.com/deeper-x/rsleet/actions/workflows/rust.yml)
+
 ```sh
 $ cargo test -v 
        Fresh rsleet v0.1.0 (/home/XXXXX/YYYYY/rsleet)
