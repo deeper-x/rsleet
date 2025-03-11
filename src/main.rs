@@ -1,9 +1,9 @@
 mod probl35;
 mod probl125;
-mod probl88;
+// mod probl88;
 mod probl409;
 mod probl20;
-
+mod probl58;
 
 fn main() {
     let nums = vec![1,2,3,4,5];
@@ -17,8 +17,12 @@ fn main() {
     println!("Problem #409 - Result: {}", probl409::solution(in_str_409));
 
     // TODO 
-    probl88::solution(&mut vec![1,2,3,0,0], 5, &mut vec![1,2], 3);
+    // probl88::solution(&mut vec![1,2,3,0,0], 5, &mut vec![1,2], 3);
 
+    let in_str_20 = "{()[]}".to_string();
+    println!("Problem #20 - Result: {}", probl20::solution(in_str_20));
 
-    println!("Problem #20 - Result: {}", probl20::solution("{()[]}".to_string()));
+    let in_str_58 = "Hello World".to_string();
+    println!("Problem #58 - Result: {}", probl58::solution(in_str_58));
+
 }
