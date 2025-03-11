@@ -1,7 +1,8 @@
 pub fn solution(s: String) -> i32 {
     let container: Vec<&str> = s.split_whitespace().collect();
-    let last = container[container.len()-1];
+    let last: &str = container[container.len()-1];
 
+    // usize to i32
     last.len() as i32
 }
 
