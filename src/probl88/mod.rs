@@ -1,6 +1,46 @@
 pub fn solution(nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
-    let size_nums1 = m as usize;
-    let nums1_sl = &nums1[0..size_nums1];
+    let mut i = m as isize - 1; // Last valid index in nums1
+    let mut j = n as isize - 1; // Last index in nums2
+    let mut k = (m + n) as isize - 1; // Last position in nums1
 
-    println!("{:?} {:?}",  nums1_sl, nums2);
+    while j >= 0 {
+        if i >= 0 && nums1[i as usize] > nums2[j as usize] {
+            nums1[k as usize] = nums1[i as usize];
+            i -= 1;
+        } else {
+            nums1[k as usize] = nums2[j as usize];
+            j -= 1;
+        }
+        k -= 1;
+    }
 } 
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    pub fn test_solution1() {
+        let mut nums1 = vec![-1,0,0,3,3,3,0,0,0];
+        let mut nums2 = vec![1,2,2];
+        
+        solution(&mut nums1, 6, &mut nums2, 3);
+    }
+
+    #[test]
+    pub fn test_solution2() {
+        let mut nums1 = vec![1];
+        let mut nums2 = vec![];
+
+        solution(&mut nums1,1, &mut nums2, 0);
+    }
+
+    #[test]
+    pub fn test_solution3() {
+        let mut nums1 = vec![5,8,7,1,2,8,7,6,5,3,0,0,0,0];
+        let mut nums2 = vec![5,7,2,3];
+
+        solution(&mut nums1, 9, &mut nums2, 4)
+    }
+}
