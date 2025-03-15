@@ -1,17 +1,18 @@
 pub fn solution(nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
-    let mut x1 = m as isize - 1; 
-    let mut x2 = n as isize - 1; 
-    let mut x_all = (m + n) as isize - 1; 
+    let mut x1 = m as isize - 1 ;
+    let mut x2 = n as isize - 1;
+    let mut x_t = (m + n) as isize - 1;
 
     while x2 >= 0 {
-        if x1 >= 0 && nums1[x1 as usize] > nums2[x2 as usize] {
-            nums1[x_all as usize] = nums1[x1 as usize];
+        if  x1 >= 0 && nums1[x1 as usize] > nums2[x2 as usize] {
+            nums1[x_t as usize] = nums1[x1 as usize];
             x1 -= 1;
         } else {
-            nums1[x_all as usize] = nums2[x2 as usize];
+            nums1[x_t as usize] = nums2[x2 as usize];
             x2 -= 1;
         }
-        x_all -= 1;
+
+        x_t -= 1
     }
 } 
 

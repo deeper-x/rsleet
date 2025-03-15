@@ -26,7 +26,7 @@ fn main() {
     // let in_prices = vec![2,5,4,7,9,10];
     // println!("Problem #121 - Result: {}", probl121::solution(in_prices));
 
-    let mut in_nums1_88 = vec![1,2,3,0,0];
+    let mut in_nums1_88 = vec![1,2,3,0,0, 0];
     let mut in_nums2_88 = vec![2,5,6];
 
     probl88::solution(&mut in_nums1_88, 3, &mut in_nums2_88 , 3);
