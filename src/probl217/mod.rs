@@ -1,26 +1,40 @@
-use std::collections::HashMap;
+// SOLUTION 1:
+// use std::collections::HashMap;
 
-pub fn solution(nums: Vec<i32>) ->  bool {
-    let mut dict: HashMap<i32, i32> = HashMap::new();
+// pub fn solution(nums: Vec<i32>) ->  bool {
+//     let mut dict: HashMap<i32, i32> = HashMap::new();
+
+//     for i in nums {
+//         let cur = dict.get(&i);
+
+//         match cur {
+//             Some(x) => {
+//                 return true
+//             },
+//             None => {
+//                 dict.insert(i, 1);
+//             }
+//         }
+//     }
+    
+//     false
+// }
+
+// SOLUTION 2:
+use std::collections::HashSet;
+
+pub fn solution(nums: Vec<i32>) -> bool {
+    let mut vals: HashSet<i32> = HashSet::new();
 
     for i in nums {
-        match dict.get(&i) {
-            Some(x) => {
-                let added = *x+1;
-                if added > 1 {
-                    return true
-                }
-
-                dict.insert(i, added);
-            },
-            None => {
-                dict.insert(i, 1);
-            }
+        if !vals.insert(i){
+            return true
         }
     }
 
     false
 }
+
 
 
 #[cfg(test)]
