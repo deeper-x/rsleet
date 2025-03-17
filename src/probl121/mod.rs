@@ -1,18 +1,27 @@
 pub fn solution(prices: Vec<i32>) -> i32 {
-    let mut max = 0;
-    for i in 0..prices.len() {
-        for j in i+1..prices.len() {
-            let first = prices[i];
-            let second = prices[j];
-            if second > first {
-                let cur = second - first;
-                if cur >= max {
-                    max = cur;
-                }
-            }
+    let mut res = 0;
+    let mut min = -1;
+    let mut max = -1;
+    
+    for i in prices {
+        if i <= min || min == -1 {
+            min = i;
+            max = 0;
         }
+
+        if i >= max || max == -1 {
+            max = i;
+        }
+
+        let cur_diff = max - min;
+
+        if cur_diff > res {
+            res = cur_diff;
+        }    
+
     }
-    max
+
+    res
 }
 
 #[cfg(test)]
