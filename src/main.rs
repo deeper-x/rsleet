@@ -5,6 +5,7 @@ mod probl409;
 mod probl20;
 mod probl58;
 mod probl121;
+mod probl217;
 
 fn main() {
     let nums = vec![1,2,3,4,5];
@@ -30,6 +31,9 @@ fn main() {
     let mut in_nums2_88 = vec![2,5,6];
 
     probl88::solution(&mut in_nums1_88, 3, &mut in_nums2_88 , 3);
-    println!("TODO - Problem #88 - Result: todo");
+    println!("Problem #88 - Result: inline");
+
+    let in_list_217 = vec![1,6,5,4,3,4,3,2,5,4];
+    println!("Problem #217 - Result: {}", probl217::solution(in_list_217));
 
 }
