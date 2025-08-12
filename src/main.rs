@@ -1,14 +1,15 @@
-mod probl35;
-mod probl125;
-mod probl88;
-mod probl409;
-mod probl20;
-mod probl58;
 mod probl121;
+mod probl125;
+mod probl20;
+mod probl205;
 mod probl217;
+mod probl35;
+mod probl409;
+mod probl58;
+mod probl88;
 
 fn main() {
-    let nums = vec![1,2,3,4,5];
+    let nums = vec![1, 2, 3, 4, 5];
     let target = 3;
     println!("Problem #35 - Result: {}", probl35::solution(nums, target));
 
@@ -24,16 +25,23 @@ fn main() {
     let in_str_58 = "Hello World".to_string();
     println!("Problem #58 - Result: {}", probl58::solution(in_str_58));
 
-    let in_prices = vec![2,5,4,7,9,10];
+    let in_prices = vec![2, 5, 4, 7, 9, 10];
     println!("Problem #121 - Result: {}", probl121::solution(in_prices));
 
-    let mut in_nums1_88 = vec![1,2,3,0,0, 0];
-    let mut in_nums2_88 = vec![2,5,6];
+    let mut in_nums1_88 = vec![1, 2, 3, 0, 0, 0];
+    let mut in_nums2_88 = vec![2, 5, 6];
 
-    probl88::solution(&mut in_nums1_88, 3, &mut in_nums2_88 , 3);
+    probl88::solution(&mut in_nums1_88, 3, &mut in_nums2_88, 3);
     println!("Problem #88 - Result: inline");
 
-    let in_list_217 = vec![1,6,5,4,3,4,3,2,5,4];
+    let in_list_217 = vec![1, 6, 5, 4, 3, 4, 3, 2, 5, 4];
     println!("Problem #217 - Result: {}", probl217::solution(in_list_217));
 
+    let in_s_205 = "foo".to_string();
+    let in_t_205 = "bar".to_string();
+
+    println!(
+        "Problem #205 - Result {}",
+        probl205::solution(in_s_205, in_t_205)
+    );
 }
