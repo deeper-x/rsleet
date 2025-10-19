@@ -2,13 +2,22 @@ mod probl121;
 mod probl125;
 mod probl20;
 mod probl205;
+mod probl21;
 mod probl217;
 mod probl35;
 mod probl409;
 mod probl58;
 mod probl88;
 
+mod another_mod {
+    pub mod something;
+}
+
+use another_mod::something::hello;
+
 fn main() {
+    hello();
+
     let nums = vec![1, 2, 3, 4, 5];
     let target = 3;
     println!("Problem #35 - Result: {}", probl35::solution(nums, target));
@@ -44,4 +53,6 @@ fn main() {
         "Problem #205 - Result {}",
         probl205::solution(in_s_205, in_t_205)
     );
+
+    probl21::solution();
 }
